@@ -2,7 +2,13 @@
   "name": "js-starter-kit",
   "version": "1.0.0",
   "description": "JavaScript development environment",
-  "scripts": {},
+  "scripts": {
+    "prestart": "node buildScripts/startMessage.js",
+    "open:src":"node buildScripts/srcServer.js",
+    "start": "npm-run-all --parallel open:src localtunnel",
+    "localtunnel" : "lt --port 3000 --subdomain magesho"
+
+  },
   "author": "Eric magesho",
   "license": "MIT",
   "dependencies": {
