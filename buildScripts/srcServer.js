@@ -22,6 +22,15 @@ app.get('/', (req,res)=> {
 
 });
 
+app.get('/users',function(req,res){
+  res.json([
+    {"id":1,"firstName":"Bob","lastName":"smith","email":"emg@gmail.com"},
+    {"id":2,"firstName":"keith","lastName":"john","email":"johnkeith@gmail.com"},
+    {"id":3,"firstName":"laura","lastName":"Anderson","email":"elaura@gmail.com"}
+  ]);
+
+});
+
 app.listen(port, (err) =>{
   if(err){
     console.log(err);

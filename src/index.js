@@ -1,5 +1,18 @@
-import './index.css';
-import numeral from 'numeral';
+import './index.css'
 
-const courseValue = numeral(1000).format('Ksh0,0.00');
-console.log(`I wuold pay ${courseValue} for this awesome course`);//eslint-disable-line no-console
+import {getUsers} from './api/userApi.js'
+
+getUsers().then(result =>{
+    let userBody ="";
+
+    result.forEach(user =>{
+        userBody+=`
+        <li> ${user.id}</li>
+        <li> ${user.firstName}</li>
+        <li> ${user.lastName}</li>
+        <li> ${user.email}</li>`
+       
+    });
+
+    global.document.getElementById('users').innerHTML=userBody;
+});
