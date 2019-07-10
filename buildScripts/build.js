@@ -1,7 +1,7 @@
 /*eslint-disable no-console*/
 
 import webpack from 'webpack';
-import webpackConfig from './webpack.config.prod';
+import webpackConfig from '../webpack.config.prod';
 import chalk from 'chalk';
 
 process.env.NODE_ENV ='production';
@@ -21,7 +21,7 @@ webpack(webpackConfig).run((err,stats) =>{
     }
 
     if(jsonStats.hasWarnings){
-        console.log(chalk.yellow('webpack generatedthe following warnings:'));
+        console.log(chalk.yellow('webpack generated the following warnings:'));
         jsonStats.warnings.map(warning => console.log(chalk.yellow(warning)));
     }
 
